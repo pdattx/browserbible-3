@@ -1,3 +1,20 @@
+// generate the max-standard-font-size by calculating the space of two open windows
+var max_standard_width = ($(window).width()-180)/2;
+var font_standard = 0;
+if (max_standard_width >= 920) {
+	font_standard = 28;
+} else if (max_standard_width >= 854) {
+	font_standard = 26;
+} else if (max_standard_width >= 789) {
+	font_standard = 24;
+} else if (max_standard_width >= 723) {
+	font_standard = 22;
+} else if (max_standard_width >= 657) {
+	font_standard = 20;
+} else {
+	font_standard = 18;
+}
+
 sofia.config = $.extend(sofia.config, {
 
 	enableFontSizeSelector: true,
@@ -5,7 +22,7 @@ sofia.config = $.extend(sofia.config, {
 	fontSizeMin: 14,
 	fontSizeMax: 28,
 	fontSizeStep: 2,
-	fontSizeDefault: 18
+	fontSizeDefault: font_standard
 
 });
 
